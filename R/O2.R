@@ -10,7 +10,7 @@
 #' O2(37, 760, method="ideal")  # Uses ideal method (vp_wagner + DO_weiss)
 #' O2(c(25, 30, 37), 760)       # Vectorized
 O2 <- Vectorize(
-  function(tc, ap, method = "legacy") {
+  function(tc, ap=760, method = "legacy") {
     method <- match.arg(method, c("legacy", "ideal"))
     
     # Constants
@@ -37,3 +37,4 @@ O2 <- Vectorize(
   },
   vectorize.args = c("tc")
 )
+
